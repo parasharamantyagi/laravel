@@ -47,14 +47,14 @@
             </ul>
             <li class="item ml-md-3">
                 @if (Route::has('login'))
-                    @auth
-                    <a href="{{ url('/home') }}" class="btn btn-primary">Home</a>
-                    @else
-                    <a href="{{ route('login') }}" class="btn btn-primary">login</a>
-                    @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="btn btn-primary">register</a>
-                    @endif
-                    @endauth
+                @auth
+                <a href="{{ url('/home') }}" class="btn btn-primary">Home</a>
+                @else
+                <a href="{{ route('login') }}" class="btn btn-primary">login</a>
+                @if (Route::has('register'))
+                <a href="{{ route('register') }}" class="btn btn-primary">register</a>
+                @endif
+                @endauth
                 @endif
             </li>
         </div>
@@ -66,9 +66,9 @@
         <div class="header-content container">
             <h1 class="header-title">
                 <span class="up">HI!</span>
-                <span class="down">I am John Doe</span>
+                <span class="down">{{$allPost->title}}</span>
             </h1>
-            <p class="header-subtitle">FRONTEND WEB DESIGNER</p>
+            <p class="header-subtitle">{{$allPost->description}}</p>
 
             <button class="btn btn-primary">Visit My Works</button>
         </div>
